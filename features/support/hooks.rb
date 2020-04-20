@@ -10,8 +10,14 @@ Before do
   # Class Home
   @home = Home.new
 
-  # Clas Integracao
-  @cursos = Cursos.new
+  # Class PesquisaCursos
+  @cursos = PesquisaCursos.new
+
+  # Class CursosPorProfessor
+  @cursosPorProf = CursosPorProfessor.new
+
+  # Class Detalhes
+  @detalhes = Detalhes.new
 end
 
 # take a shot

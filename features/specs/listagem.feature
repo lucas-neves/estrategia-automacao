@@ -8,6 +8,12 @@ Funcionalidade: Listagem de cursos
     Contexto: Verificação das informações de resultados
         Dado que estou na página de resultados
 
+    Esquema do Cenário: Visualização de resultados por pacotes
+        Quando seleciono um item para ser detalhado
+        E sistema direciona para página de detalhamento do pacote
+        E entro no item capturando seu valor parcelado
+        Então sistema direciona para página de detalhamente do curso
+
     Esquema do Cenário: Visualização de múltiplos resultados
         E capturo os termos da lista de resultados
         E verifico se os resultados contém o termo "<termo>"
