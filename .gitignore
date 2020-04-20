@@ -1,0 +1,4 @@
+log/*.log
+log/screenshots
+log/*.json
+*.lock

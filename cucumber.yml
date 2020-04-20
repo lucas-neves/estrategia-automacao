@@ -1,0 +1,6 @@
+---
+default: --format pretty -p chrome
+ci: --format pretty -p json -p chrome_headless
+json: --format json --out=log/report.json
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
