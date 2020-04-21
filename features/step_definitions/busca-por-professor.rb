@@ -14,40 +14,27 @@ E('preencho o campo de filtro com o {string} e pesquiso') do |nome|
 end
 
 # --------------------- exibição do conteúdo filtrado --------------------- #
-Entao('sistema exibe na lista o resultado filtrado') do
+E('sistema exibe na lista o resultado filtrado') do
   # verificando página de resultados
-  expect(@cursos.resultado_filtrado).to have_selector('section', count: 1)
+  expect(@cursosPorFiltro.page_name).to have_content 'Cursos por professor'
   expect(@cursos.primeiro_resultado_filtrado).to have_content @professor
 end
 
-# --------------------- verificando página de resultados --------------------- #
-Dado('que estou na página de resultados') do
-  # busca por palavra-chave
-  expect(@cursos.page_name).to have_content 'Resultado da busca'
-end
-
 # --------------------- acessando o detalhamento do pacote --------------------- #
-Quando('seleciono um item para ser detalhado') do
+Quando('seleciono um pacote para ser detalhado') do
   # acessar detalhamento do pacote
-  @cursos.acessar_detalhes_item
+  @cursosPorFiltro.acessar_detalhes_item
 end
 
 # --------------------- verificando página de detalhamento do pacote --------------------- #
 E('sistema direciona para página de detalhamento do pacote') do
   # verificar título da página
-  expect(@cursosPorProf.page_name).to have_content @professor
+  expect(@cursosPorFiltro.package_page_name).to have_content @professor
 end
 
 # --------------------- capturando o valor do curso para asserção e entrando --------------------- #
 E('entro no item capturando seu valor parcelado') do
   # acessar detalhamento do item
-  @calculoParcelado = @cursosPorProf.capturar_valor_parcelado
-  @cursosPorProf.acessar_detalhes_item
-end
-
-# --------------------- verificando página de detalhamento do curso --------------------- #
-Entao('sistema direciona para página de detalhamente do curso') do
-  # verificar título da página
-  expect(@detalhes.page_name).to have_content 'Cursos por concurso'
-  expect(@calculoParcelado).to eql @detalhes.capturar_valor_total 
+  @calculoParcelado = @cursosPorFiltro.capturar_valor_parcelado
+  @cursosPorFiltro.acessar_detalhes_item
 end

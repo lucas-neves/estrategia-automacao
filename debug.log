@@ -1,0 +1,4 @@
+[0420/184619.889:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[0420/184619.891:ERROR:exception_snapshot_win.cc(98)] thread ID 5508 not found in process
+[0420/184619.904:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[0420/184619.904:ERROR:exception_snapshot_win.cc(98)] thread ID 3692 not found in process

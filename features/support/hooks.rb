@@ -13,8 +13,8 @@ Before do
   # Class PesquisaCursos
   @cursos = PesquisaCursos.new
 
-  # Class CursosPorProfessor
-  @cursosPorProf = CursosPorProfessor.new
+  # Class CursosPorFiltro
+  @cursosPorFiltro = CursosPorFiltro.new
 
   # Class Detalhes
   @detalhes = Detalhes.new

@@ -11,9 +11,11 @@ class Detalhes
 
   # get item price
   def capturar_valor_total
-    mtch = find_all('.cur-details-shopping-price > div', text: '([1-9]\d{0,2}(,\d{2})*)', match: :prefer_exact)    
-    puts mtch.first.text.colorize(:blue)
-    mtch.first.text
+    price = find('div.value').text  
+    matchdata = price.scan(/([1-9]\d{0,2}(,\d{2})*)/)
+    valor_total = matchdata.first[0].to_f
+    puts "Valor total do curso: #{valor_total}".colorize(:blue)
+    valor_total
   end
 
 end
